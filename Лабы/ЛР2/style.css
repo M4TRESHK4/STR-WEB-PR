@@ -1,0 +1,68 @@
+body{
+    background-color: rgb(132, 151, 145);
+    
+    
+}
+
+
+#movie1{
+    font-family: GangofThree;
+
+}
+
+#movie2{
+    font-family: Kaph;
+
+}
+
+#movie3{
+    font-family: Letov;
+
+}
+
+
+li{
+    
+    list-style-type: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.left {
+    text-align: left;
+  }
+
+.center {
+    text-align: center;
+  }
+  
+.right {
+    text-align: right;
+  }
+
+@font-face {
+    
+    font-family: "GangofThree"; 
+    src: url("fonts/ofont.ru_Gang of Three.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    
+    font-family: "Kaph"; 
+    src: url("fonts/ofont.ru_Kaph.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  @font-face {
+    
+    font-family: "Letov"; 
+    src: url("fonts/ofont.ru_Letov.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
