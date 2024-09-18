@@ -1,0 +1,25 @@
+.group{
+    display: block;
+    width: 580px;
+    height: 350px;
+    border: 10px inset rgb(119, 80, 227);
+
+    margin-top: 1%;
+    margin: auto;
+
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+fieldset{
+    width: 500px;
+    height: 300px;
+    margin: auto;
+}
+
+.lastActions{
+    margin: auto;
+    width: 100px;
+    margin-top: 10px;
+}
