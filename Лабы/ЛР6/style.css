@@ -1,0 +1,41 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+.grid{
+display: grid;
+grid-template-areas: "a b c c" "a d c c" "a e f g" "h i i j";
+}
+/*nth-child - псевдокласс*/
+.grid > article:nth-child(1) { grid-area: a; }
+.grid > article:nth-child(2) { grid-area: b; }
+.grid > article:nth-child(3) { grid-area: c; }
+.grid > article:nth-child(4) { grid-area: d; }
+.grid > article:nth-child(5) { grid-area: e; }
+.grid > article:nth-child(6) { grid-area: f; }
+.grid > article:nth-child(7) { grid-area: g; }
+.grid > article:nth-child(8) { grid-area: h; }
+.grid > article:nth-child(9) { grid-area: i; }
+.grid > article:nth-child(10) { grid-area: j; }
+
+article {
+  padding: 10px;
+  margin: 10px;
+  background: rgba(16, 233, 215, 0.178);
+}
+
