@@ -19,7 +19,10 @@ h1 {
 }
 .grid{
 display: grid;
-grid-template-areas: "a b c c" "a d c c" "a e f g" "h i i j";
+grid-template-areas: "a b c c" 
+                     "a d c c" 
+                     "a e f g" 
+                     "h i i j";
 }
 /*nth-child - псевдокласс*/
 .grid > article:nth-child(1) { grid-area: a; }

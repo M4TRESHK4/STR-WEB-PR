@@ -1,84 +1,91 @@
 html {
     font-family: sans-serif;
   }
-  
-  body {
-    margin: 0;
-  }
-  
-  header {
-    background: rgb(52, 206, 142);
-    height: 100px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: white;
-    line-height: 100px;
-    margin: 0;
-  }
-  
-  button {
-    margin: 50px;
-    font-size: 20px;
-    background-color: red;
-    transition: background-color 0.3s ease; /* Добавлен плавный переход цвета */
-  }
-  
-  button:hover {
-    background-color: forestgreen; /* Цвет меняется на зелёный при наведении */
-  }
-  
-  a {
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-    transition: color 0.5s;
-    position: relative;
-  }
-  a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 50%;
-    background-color: green;
-    transition: width 0.3s, left 0.3s;
-  }
-  a:hover::after {
-    width: 100%;
-    left: 0;
-  }
-  a:hover {
-    color: darkgreen;
-  }
-  
-  .container {
-    position: relative;
-    height: 400px;
-  }
-  
-  .ball {
-    position: absolute;
-    bottom: 0;
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 50%;
-    animation: bounce 4s ease-in-out infinite;
-  }
-  
-  @keyframes bounce {
-    0% { bottom: 100%; transform: scaleY(1); }
-    13% { bottom: 10%; transform: scaleY(1); }
-    15% { bottom: 0; transform: scaleY(0.6); }
-    30% { bottom: 45%; transform: scaleY(1); }
-    40% { bottom: 5%; transform: scaleY(1); }
-    45% { bottom: 0; transform: scaleY(0.8); }
-    55% { bottom: 20%; transform: scaleY(1); }
-    75% { bottom: 0; transform: scaleY(0.9); }
-    90% { bottom: 9%; transform: scaleY(1); }
-    100% { bottom: 0; transform: scaleY(1); }
-  }
-  
+
+body {
+  margin: 0;
+}
+
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+button {
+  margin: 50px;
+  font-size: 20px;
+  background-color: red;
+}
+
+a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.5s;
+  position: relative;
+}
+a::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: green;
+  transition: width 0.3s, left 0.3s;
+}
+a:hover::after{
+  width: 100%;
+  left: 0;
+}
+a:hover{
+  color: darkgreen;
+}
+@keyframes move {
+  50% {left: 1px;}
+  100% {right: 1px;}
+}
+
+button {
+  position: relative;
+  animation: move .2s infinite;
+  transition: 10s;
+  transition: background-color 0.3s ease; /* Добавлен плавный переход цвета */
+}
+button:hover{
+  animation: none;
+  background-color: forestgreen;
+}
+
+.container {
+  position: relative;
+  height: 400px;
+}
+.ball {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: bounce 4s ease-in-out infinite;
+}
+@keyframes bounce {
+  0% { bottom: 100%; transform: scaleY(1); }
+  13% { bottom: 10%; transform: scaleY(1); }
+  15% { bottom: 0; transform: scaleY(0.6); }
+  30% { bottom: 45%; transform: scaleY(1); }
+  40% { bottom: 5%; transform: scaleY(1); }
+  45% { bottom: 0; transform: scaleY(0.8); }
+  55% { bottom: 20%; transform: scaleY(1); }
+  75% { bottom: 0; transform: scaleY(0.9); }
+  90% { bottom: 9%; transform: scaleY(1); }
+  100% { bottom: 0; transform: scaleY(1); }
+}
