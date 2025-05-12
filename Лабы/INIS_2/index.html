@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T-Shirt Store</title>
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <h1>Our T-Shirts</h1>
+    <div class="products"></div>
+
+    <script src="shirts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productsContainer = document.querySelector('.products');
+
+            shirts.forEach(shirt => {
+                try {
+                    // Создание контейнера для продукта
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product';
+
+                    
+
+                    // Заголовок с названием
+                    const title = document.createElement('h2');
+                    title.textContent = shirt.name;
+                    productCard.appendChild(title);
+
+                    // Количество цветов
+                    const colorsCount = Object.keys(shirt.colors).length;
+                    const colorsInfo = document.createElement('p');
+                    colorsInfo.textContent = `Available in ${colorsCount} color${colorsCount !== 1 ? 's' : ''}`;
+                    productCard.appendChild(colorsInfo);
+
+                    // Изображение продукта
+                    const imgContainer = document.createElement('div');
+                    const img = document.createElement('img');
+                    
+                    // Попытка загрузки первого доступного изображения
+                    const firstColor = colorsCount > 0 
+                        ? shirt.colors[Object.keys(shirt.colors)[0]].front 
+                        : shirt.default.front;
+
+                    img.src = firstColor;
+                    img.alt = shirt.name;
+                    
+                    // Обработка ошибок загрузки изображения
+                    img.onerror = () => {
+                        img.src = shirt.default.front;
+                        console.warn(`Failed to load image: ${firstColor}`);
+                    };
+                    
+                    imgContainer.appendChild(img);
+                    productCard.appendChild(imgContainer);
+
+                    // Кнопки
+                    const buttons = document.createElement('div');
+                    buttons.className = 'buttons';
+
+                    const quickView = document.createElement('button');
+                    quickView.textContent = 'Quick View';
+                    buttons.appendChild(quickView);
+
+                    const seePage = document.createElement('button');
+                    seePage.textContent = 'See Page';
+                    buttons.appendChild(seePage);
+
+                    seePage.addEventListener('click', () => {
+                    localStorage.setItem('selectedShirt', JSON.stringify(shirt));
+                    window.location.href = 'details.html';
+                    });
+
+
+                    productCard.appendChild(buttons);
+
+                    productsContainer.appendChild(productCard);
+                } catch (error) {
+                    console.error(`Error rendering product ${shirt.name}:`, error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
