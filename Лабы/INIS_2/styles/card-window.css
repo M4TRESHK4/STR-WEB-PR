@@ -1,0 +1,53 @@
+.tshirts-window-cont {
+    max-width: 800px;
+    margin: 5px auto;
+}
+
+.big-shirts-card {
+    display: flex;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.big-img {
+    border-radius: 15px;
+    width: 250px;
+}
+
+.big-card-inf {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+}
+
+.big-side, .big-color {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-side {
+    padding: 5px 15px;
+    background-color: #4634cd;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-side:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-color {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
